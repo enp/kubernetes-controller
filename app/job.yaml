@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: echo
+spec:
+  backoffLimit: 0
+  template:
+    spec:
+      containers:
+      - name: echo
+        image: alpine
+        command: [ 'echo', 'HELLO' ]
+      restartPolicy: Never
